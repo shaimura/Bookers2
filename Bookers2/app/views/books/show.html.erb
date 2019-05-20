@@ -22,19 +22,19 @@
 
 
         <div class="col-xs-9">
-	        <h2>Books</h2>
+	        <h2>Book detail</h2>
 	        <table class="table">
 	        	<thead>
 	        		<tr>
 	        			<th></th>
-	        			<th>Title</th>
-	        			<th>Opinion</th>
+	        			<th></th>
+	        			<th></th>
 	        		</tr>
 	        	</thead>
-	        	<% @books.each do |f| %>
+	        	<% @book.each do |f| %>
 	        	<tbody>
 	        		<tr>
-	        			<td> <% f.user.name %> </td>
+	        			<td> <% book.user.name %> </td>
 	        			<td> <%= f.title %> </td>
 	        			<td> <%= f.body %> </td>
 	        		</tr>
