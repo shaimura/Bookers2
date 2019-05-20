@@ -34,9 +34,10 @@
 	        	<% @book.each do |f| %>
 	        	<tbody>
 	        		<tr>
-	        			<td> <% book.user.name %> </td>
+	        			<td> <% f.user.name %> </td>
 	        			<td> <%= f.title %> </td>
 	        			<td> <%= f.body %> </td>
+	        			<td> <%= link_to 'Edit',edit_bookpath(f) %></td>
 	        		</tr>
 	        	</tbody>
 	        	<% end %>
