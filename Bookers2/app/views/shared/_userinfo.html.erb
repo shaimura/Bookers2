@@ -1,0 +1,23 @@
+            <section>
+			    <h2>User info</h2>
+			    <%= attachment_image_tag @user,:profile_image, :fill,100,100, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+			    <table class="table">
+			    	<thead>
+			    		<tr>
+			    			<th></th>
+			    			<th></th>
+			    		</tr>
+			    	</thead>
+			    	<tbody>
+			    		<tr>
+			    			<td>name</td>
+			    			<td><%= current_user.name %></td>
+			    		</tr>
+			    		<tr>
+			    			<td>introduction</td>
+			    			<td><%= current_user.introduction %></td>
+			    		</tr>
+			    	</tbody>
+			    </table>
+			    <%= link_to 'aa', edit_user_path(current_user.id) , class: "glyphicon glyphicon-wrench", aria_hidden: "true" %>
+			</section>
