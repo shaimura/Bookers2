@@ -1,2 +1,46 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render 'shared/header'%>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3">
+			<section>
+			    <h2>User info</h2>
+			    <h5>name <%= current_user.name %> </h5>
+			    <h5>introduction <%= current_user.introduction %></h5>
+			</section>
+			<section>
+				<h2>New book</h2>
+				<%= form_for(Book.new) do |f| %>
+				<h5>Title</h5>
+				<%= f.text_field :title %>
+				<h5>Opinion</h5>
+				<%= f.text_area :body %>
+				<%= f.submit "Create Book", class: "btn btn-primary" %>
+				<% end %>
+			</section>
+		</div>
+
+
+        <div class="col-xs-9">
+	        <h2>Books</h2>
+	        <table class="table">
+	        	<thead>
+	        		<tr>
+	        			<th></th>
+	        			<th>Title</th>
+	        			<th>Opinion</th>
+	        		</tr>
+	        	</thead>
+	        	<% @books.each do |f| %>
+	        	<tbody>
+	        		<tr>
+	        			<td> <% f.user.name %> </td>
+	        			<td> <%= f.title %> </td>
+	        			<td> <%= f.body %> </td>
+	        		</tr>
+	        	</tbody>
+	        	<% end %>
+	        </table>
+        </div>
+    </div>
+</div>
