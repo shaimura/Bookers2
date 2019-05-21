@@ -4,10 +4,6 @@ class BooksController < ApplicationController
 		@books = Book.all
 	end
 
-	def top
-		
-	end
-
 
 	def create
 		@book = Book.new(book_params)
