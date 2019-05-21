@@ -3,7 +3,29 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-3">
-			<%= render 'shared/userinfo' %>
+		    <section>
+			    <h2>User info</h2>
+			    <%= attachment_image_tag @user,:profile_image, :fill,100,100, class: "img-rounded pull-left profile-thumb", fallback: "no_image.jpg" %>
+			    <table class="table">
+			    	<thead>
+			    		<tr>
+			    			<th></th>
+			    			<th></th>
+			    		</tr>
+			    	</thead>
+			    	<tbody>
+			    		<tr>
+			    			<td>name</td>
+			    			<td><%= @user.name %></td>
+			    		</tr>
+			    		<tr>
+			    			<td>introduction</td>
+			    			<td><%= @user.introduction %></td>
+			    		</tr>
+			    	</tbody>
+			    </table>
+			    <%= link_to '', edit_user_path(current_user.id) , class: "btn btn-default glyphicon glyphicon-wrench", aria_hidden: "true" %>
+			</section>
 			<%= render 'shared/newbook' %>
 			</section>
 		</div>
@@ -21,7 +43,7 @@
 	        	</thead>
 	        	<tbody>
 	        		<tr>
-	        			<td> <%= @users.name %> </td>
+	        			<td> <%= @user.name %> </td>
 	        			<td> <%= @book.title %> </td>
 	        			<td> <%= @book.body %> </td>
 	        			<td> <%= link_to 'Edit',edit_book_path(@book), class: "btn btn-success" %></td>

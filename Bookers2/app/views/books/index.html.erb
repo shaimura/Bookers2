@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-3">
-			<%= render 'shared/userinfo' %>
+            <%= render 'shared/userinfo' %>
 			<%= render 'shared/newbook' %>
 			</section>
 		</div>
@@ -16,15 +16,13 @@
 	        		<tr>
 	        			<th></th>
 	        			<th>Title</th>
-	        			<th>Opinion</th>
 	        		</tr>
 	        	</thead>
 	        	<% @books.each do |f| %>
 	        	<tbody>
 	        		<tr>
-	        			<td> <% f.user.name %> </td>
-	        			<td> <%= f.title %> </td>
-	        			<td> <%= f.body %> </td>
+	        			<td> <%= attachment_image_tag f.user,:profile_image, size:"40x40" , class: "img-rounded pull-left profile-thumb", fallback: "no_image.jpg" %> </td>
+	        			<td> <%= link_to f.title,  book_path(f) %> </td>
 	        		</tr>
 	        	</tbody>
 	        	<% end %>

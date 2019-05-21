@@ -21,7 +21,7 @@
 	        	<% @users.each do |f| %>
 	        	<tbody>
 	        		<tr>
-	        			<td></td>
+	        			<td> <%= attachment_image_tag f,:profile_image, size:"40x40" , class: "img-rounded pull-left profile-thumb", fallback: "no_image.jpg" %></td>
 	        			<td> <%= f.name %> </td>
 	        			<td> <%= link_to 'show', user_path(f) %> </td>
 	        		</tr>
