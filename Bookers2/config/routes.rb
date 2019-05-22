@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :books, only:[:create, :index, :show, :update, :destroy, :edit]
   resources :users, only:[:show, :index, :edit, :update]
 
-  root :to => 'hoom#top'
+
+  root :to => 'home#top'
 
   get 'top' => 'home#top'
   get 'about' => 'home#about'
