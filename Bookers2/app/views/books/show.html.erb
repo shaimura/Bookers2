@@ -44,7 +44,13 @@
 	        	</thead>
 	        	<tbody>
 	        		<tr>
-	        			<td> <%= @user.name %> </td>
+	        			<td> <%= link_to user_path(@user) do %>
+	        				<%= attachment_image_tag @user,:profile_image, size:"50x50" , class: "img-rounded pull-left profile-thumb", fallback: "no_image.jpg" %><br>
+	        				<br>
+	        				<br>
+	        				 <%= @user.name %>
+	        				<% end %>
+	        				 </td>
 	        			<td> <%= @book.title %> </td>
 	        			<td> <%= @book.body %> </td>
 	        			<% if @user == current_user %>
