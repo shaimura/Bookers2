@@ -5,29 +5,7 @@
 		<div class="col-xs-3">
 			<%= flash[:notice] %>
 			<%= render 'shared/userinfo' %>
-			<section>
-			    <h2>User info</h2>
-			    <%= attachment_image_tag current_user,:profile_image, :fill,100,100, class: "img-rounded pull-left profile-thumb", fallback: "no_image.jpg" %>
-			    <table class="table">
-			    	<thead>
-			    		<tr>
-			    			<th></th>
-			    			<th></th>
-			    		</tr>
-			    	</thead>
-			    	<tbody>
-			    		<tr>
-			    			<td>name</td>
-			    			<td><%= current_user.name %></td>
-			    		</tr>
-			    		<tr>
-			    			<td>introduction</td>
-			    			<td><%= current_user.introduction %></td>
-			    		</tr>
-			    	</tbody>
-			    </table>
-			    <%= link_to '', edit_user_path(current_user.id) , class: "btn btn-default btn-ig btn-block glyphicon glyphicon-wrench", aria_hidden: "true" %>
-			</section>
+			<%= render 'shared/newbook'%>
 		</div>
 
 
