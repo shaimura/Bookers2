@@ -3,9 +3,6 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
 
-  def correct_user
-    redirect_to root_url
-  end
 
   def show
   	@user = User.find(params[:id])
@@ -24,7 +21,7 @@ class UsersController < ApplicationController
   def update
   	@user = User.find(params[:id])
   	if @user.update(user_params)
-      redirect_to users_path
+      redirect_to users_path, notice: "You have updated user successfully"
     else
       render :edit
     end
@@ -35,4 +32,10 @@ class UsersController < ApplicationController
   def user_params
   	params.require(:user).permit(:name, :introduction, :profile_image)
   end
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless @user == current_user
+  end
+
 end
